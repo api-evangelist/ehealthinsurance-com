@@ -1,25 +1,66 @@
 aid: ehealthinsurance-com
+
 name: Ehealth
-description: 'Ehealth is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by lightspeed-venture-partners) and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Ehealth is a health insurance technology platform offering digital tools for consumers to compare, purchase, and manage health insurance plans. The company provides APIs that enable integration of plan listings, enrollment assistance, and member services into third‑party applications, aiming to simplify the health insurance marketplace and improve user experience through modern web services.'
+
 url: https://raw.githubusercontent.com/api-evangelist/ehealthinsurance-com/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-24 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-24'
+
 modified: '2026-10-24'
+
 tags:
 - Company
-apis: []
+- Health
+- Insurance
+- Technology
+- API
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- lightspeed-venture-partners
+
 common:
+- type: Hosts
+  url: hosts/ehealthinsurance-com-hosts.yml
+- type: Vendors
+  url: vendors/ehealthinsurance-com-vendors.yml
+- type: DomainSecurity
+  url: security/ehealthinsurance-com-domain-security.yml
 - type: Website
   url: https://ehealthinsurance.com
+
+apis: []
+
+x-backed-by:
+- lightspeed-venture-partners
+
+x-coverage:
+  state: blocked
+  reason: bot-challenge
+  method: derived
+  generated: '2026-10-24'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company's own front door answers a browser with an anti-bot challenge, so nothing behind it is reachable by any reader
+  evidence:
+  - url: https://ehealthinsurance.com
+    status: 403
+x-enrichment:
+  date: '2026-10-24'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
